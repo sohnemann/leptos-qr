@@ -1,6 +1,6 @@
 use leptos::mount::mount_to_body;
-use leptos::prelude::create_signal;
 use leptos::prelude::event_target_value;
+use leptos::prelude::signal;
 use leptos::prelude::ElementChild;
 use leptos::prelude::OnAttribute;
 use leptos::prelude::PropAttribute;
@@ -12,7 +12,7 @@ use leptos_qr::QrCode;
 fn main() {
     console_error_panic_hook::set_once();
 
-    let (qr_text, set_qr_text) = create_signal("Hello, World!".to_string());
+    let (qr_text, set_qr_text) = signal("Hello, World!".to_string());
 
     mount_to_body(move || {
         view! {
