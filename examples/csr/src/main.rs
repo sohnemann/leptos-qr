@@ -1,10 +1,18 @@
-use leptos::{event_target_value, mount_to_body, view, SignalSet};
+use leptos::mount::mount_to_body;
+use leptos::prelude::event_target_value;
+use leptos::prelude::signal;
+use leptos::prelude::ElementChild;
+use leptos::prelude::OnAttribute;
+use leptos::prelude::PropAttribute;
+use leptos::prelude::Set;
+use leptos::prelude::StyleAttribute;
+use leptos::view;
 use leptos_qr::QrCode;
 
 fn main() {
     console_error_panic_hook::set_once();
 
-    let (qr_text, set_qr_text) = leptos::create_signal("Hello, World!".to_string());
+    let (qr_text, set_qr_text) = signal("Hello, World!".to_string());
 
     mount_to_body(move || {
         view! {
